@@ -25,6 +25,8 @@ This project aims to build an intelligent system for retrieving specific news ev
 ## 🖼️ System Architecture
 
 ![Image](https://github.com/user-attachments/assets/e03fb571-a35a-4f7f-866f-c802257c4920)
+**n8n pipeline**
+![Image](https://github.com/user-attachments/assets/03684ce6-03e3-42b8-90da-73128867974e)
 ---
 
 ## 🛠️ Tech Stack
