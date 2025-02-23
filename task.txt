@@ -1,0 +1,57 @@
+Project: Video Retrival System 
+- Cài đặt luồng để tự động tải video trên youtube mỗi khi có update mới bằng n8n
+	Đã trigger được đến kênh youtube
+	Đã cài credential thủ công để parse thông tin. 
+- Viết code xử lí video
+	Đã xong code táchtách keyframes 
+	Đã test thử luồng đẩy code lên cho kaggle xử lí video
+		Tải thư viện kaggle, lấy file .json lưu key, viết file metadata để đẩy code lên kaggle
+		kaggle kernels init -p .
+		kaggle kernels push -p .
+		kaggle datasets create -p .\\videos\\
+		kaggle datasets version -p .\\videos\\ -m "11022025" 
+		kaggle kernels output mrisdal/exploring-survival-on-the-titanic -p /path/to/dest
+		kaggle kernels status mrisdal/exploring-survival-on-the-titanic
+		Sửa bug lỗi encode 
+			For example, the system encoding of Windows is 'cp932' codec.
+			In this situation, if you open and read a file with the code 
+				with open(code_file) as f:, 
+			you will get an error like "'cp932' codec can't decode byte 0xef".
+			It may be more appropriate to use the code with open(code_file, encoding='utf-8') as f: when opening a file.
+			the encoding of Python scripts and notebooks is assumed to be UTF-8,
+	Đang code chuyển keyframe thành embedding, sử dụng mô hình CLIP
+- Tích hợp kaggle vào n8n ()
+	cần cài python vào image có sẵn của n8n (đã xong)
+	chuyển thư mục code vào n8n image (đã xong)
+- Làm các node trong n8n
+	Code xong bash file để tải video, tách keyframes
+	Còn code bash file để trích xuất thông tin 
+- Dua file local len ec2, set up moi truong tren ec2
+	sudo su
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install python3-pip
+	sudo apt-get install python3-venv
+	python3 -m venv my_env_project
+	scp -r -i "image-retrival-ec2.pem" image_retrieve_gui/ ubuntu@ec2-52-64-203-116.ap-southeast-2.compute.amazonaws.com:/home/ubuntu/app
+	bash setup.sh
+
+LINK THAM KHẢO:
+tích hợp kaggle vào n8n: https://n8n.io/integrations/fusioo/and/kaggle/
+list command kaggle api: 
+	https://github.com/Kaggle/kaggle-api/blob/main/docs/README.md
+	https://www.kaggle.com/docs/api
+Link hướng dẫn làm credential cho self-host sever trong n8n: https://www.youtube.com/watch?v=CGWLTFxdibc
+Link API endpoint của kaggle: 
+	https://viblo.asia/p/truy-cap-kaggle-public-api-voi-rest-Qbq5QEnw5D8
+	https://editor.swagger.io/
+Link docker chứa n8n và python3.10: (link lỏ, image này lỗi)
+	https://github.com/naskio/docker-n8n-python
+Link add S3 vào EC2:
+	https://www.youtube.com/watch?v=771U5ctBhWA
+Chuyen file tu local len ec2:
+	https://www.youtube.com/watch?v=vj3SrXB9d7M
+Deploy gradio in AWS
+	https://abdulrahman-almutlaq.medium.com/deploying-gradio-on-aws-a-beginners-quick-start-guide-85a01f269945
+tang thoi gian doi cua github:
+	https://dev.to/styt/solving-error-rpc-failed-curl-92-http2-stream-5-was-not-closed-cleanly-cancel-err-8-during-homebrew-installation-4f0f#:~:text=Follow%20these%20steps%20to%20resolve%20this%20issue.%20Ensure,--global%20http.version%20HTTP%2F1.1%20git%20config%20--global%20http.postBuffer%20524288000

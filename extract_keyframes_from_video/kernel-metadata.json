@@ -1,0 +1,15 @@
+{
+  "id": "hodinhtrieu/extract-the-keyframes",
+  "title": "extract-the-keyframes",
+  "code_file": "extract-the-keyframes.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["hodinhtrieu/transition-detection","hodinhtrieu/unimportant-frame","hodinhtrieu/video-data"],
+  "competition_sources": [],
+  "kernel_sources": ["hodinhtrieu/low-level-filter","hodinhtrieu/medium-level-filter","hodinhtrieu/transnet-utils"],
+  "model_sources": []
+}

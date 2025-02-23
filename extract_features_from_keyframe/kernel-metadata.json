@@ -1,0 +1,15 @@
+{
+  "id": "hodinhtrieu/extract-the-features",
+  "title": "extract-the-features",
+  "code_file": "extract-the-features.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": ["hodinhtrieu/extract-the-keyframes"],
+  "model_sources": []
+}

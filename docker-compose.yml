@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  n8n-python:
+    build: .
+    container_name: n8n_python
+    restart: always
+    ports:
+      - "5678:5678"  # Cổng cho n8n
+      - "8000:8000"  # Cổng cho FastAPI
+    environment:
+      - GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      # - ./:/app  # Mount thư mục code vào container
+      - C:/Users/Trieu/OneDrive/Documents/n8n:/home/node/.n8n  # Mount dữ liệu n8n
+    working_dir: /app  
+    # command: ["uvicorn", "sever:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
