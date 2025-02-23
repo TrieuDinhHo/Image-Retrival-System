@@ -24,8 +24,7 @@ This project aims to build an intelligent system for retrieving specific news ev
 
 ## 🖼️ System Architecture
 
-![Image](https://github.com/user-attachments/assets/e3a39af9-2173-42a6-b3ac-081bbd4ea2eb)
-
+![Image](https://github.com/user-attachments/assets/e03fb571-a35a-4f7f-866f-c802257c4920)
 ---
 
 ## 🛠️ Tech Stack
